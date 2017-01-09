@@ -23,7 +23,7 @@ angular.module('starter')
             }
 
         };
-        
+
 
 
         var me = $scope;//thisをmeに退避
@@ -34,8 +34,8 @@ angular.module('starter')
 
 
         var category_id = $rootScope.category_id;
-       var category_name = $rootScope.category_name;
-       
+        var category_name = $rootScope.category_name;
+
         var init = function () {
             me.items.currentNum = 0;//現在のクイズ番号(1問目)
 
@@ -64,7 +64,7 @@ angular.module('starter')
 
         //解答ボタンが押されたら
         me.getAnswer = function () {
-
+          $scope.switching = false;
             // var flag = answerNum == ind;//正解か間違いか判定
             // var flagText = "間違い";
             // if (flag) {//正解だったら
@@ -90,15 +90,15 @@ angular.module('starter')
                 $location.path('/result');
 
 
-
             } else {//まだクイズが残っていれば
                 me.items.currentNum++;
 
                 // これかかないと$scope.$applyでエラー
                 $timeout(function () {
                     $scope.$apply(questionInit);//次のクイズ用意
-
+  
                 });
+           
             }
 
             //  }
