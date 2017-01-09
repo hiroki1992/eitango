@@ -1,0 +1,31 @@
+<div class="title">
+  <h1><span>Quiz App</span></h1>
+  <p>英単語クイズアプリ</p>
+</div>
+
+<div class="list">
+ <label class="item item-input item-select item-stable">
+   <div class="input-label">
+     カテゴリー選択
+   </div>
+
+    <select ng-model="category_id"
+           ng-options="categories as categories.category_name  for categories in categories"  value="{{categories.category_id}}">
+
+ <option value="">選択してください</option>
+
+   </select>
+
+
+ </label>
+</div>
+<br>
+<br>
+<br>
+<br>
+<div class="start-btn" align="center">
+  <button  ng-click="gameStart(category_id)" class="button button-positive button-large">
+          Game Start
+        </button>
+
+</div>

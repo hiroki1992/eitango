@@ -1,0 +1,46 @@
+<div class="bar bar-header bar-positive">
+
+	<button ng-click="backTop()" class="button button-positive ">
+					戻る
+				</button>
+
+	<p class="title">
+		{{category_name}}
+	</p>
+
+	<p class="buttons">
+		{{items.currentNum + 1}} / {{items.totalNum}}問目
+	</p>
+
+</div>
+
+<ion-content>
+
+	<div class="question">
+        <h1>{{items.currentQ.word_str}}</h1>
+	</div>
+
+<button ng-click="switching=switching?false:true;" class="button button-lg button-positive" >回答をみる</button>
+
+<br>
+<br>
+<div>
+<h1 ng-show="switching">答え:{{items.currentQ.yaku}}<h1>
+    </div>
+    <br>
+    <button class="button button-full button-calm" ng-click="getAnswer($index)">
+        次へ</button>
+    
+    <!--<div class="choices">
+		<div class="row">
+			<div class="col col-50" align="center" ng-repeat="choice in items.currentQ.choices track by $index">
+				<div class="choice">
+
+					<button class="button button-full button-calm" ng-click="getAnswer($index)">							  
+							  {{choice}}
+        		  		</button>
+				</div>
+			</div>
+		</div>
+	</div>-->
+</ion-content>
