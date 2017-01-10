@@ -5,7 +5,7 @@
 				</button>
 
 	<p class="title">
-		{{category_name}}
+		{{level_name}}
 	</p>
 
 	<p class="buttons">
@@ -18,15 +18,13 @@
 
 	<div class="question">
         <h1>{{items.currentQ.word_str}}</h1>
+		<br>
+		<h1 ng-show="switching">{{items.currentQ.yaku}}<h1>
 	</div>
 
 <button  ng-click="switching_fnc()" class="button button-lg button-positive" >回答をみる</button>
 
 <br>
-<br>
-<div>
-<h1 ng-show="switching">答え:{{items.currentQ.yaku}}<h1>
-    </div>
     <br>
     <button class="button button-full button-calm" ng-click="getAnswer($index)">
         次へ</button>

@@ -33,15 +33,15 @@ angular.module('starter')
         var questions = null;//クイズデータ
 
 
-        var category_id = $rootScope.category_id;
-        var category_name = $rootScope.category_name;
+        var level_id = $rootScope.level_id;
+        var lebel_name = $rootScope.level_name;
+        var sub_str = $rootScope.sub_str;
 
         var init = function () {
             me.items.currentNum = 0;//現在のクイズ番号(1問目)
 
-            var p = questionsService.get_questions(category_id);
+            var p = questionsService.get_questions(level_id);
             p.then(function (question_data) {
-
                 questions = JSON.parse(JSON.stringify(question_data));//クイズデータをサービスより取得&ディープコピー
 
                 me.items.totalNum = questions.length;//取得したクイズデータの全クイズ数
@@ -64,7 +64,7 @@ angular.module('starter')
 
         //解答ボタンが押されたら
         me.getAnswer = function () {
-          $scope.switching = false;
+            $scope.switching = false;
             // var flag = answerNum == ind;//正解か間違いか判定
             // var flagText = "間違い";
             // if (flag) {//正解だったら
@@ -96,9 +96,9 @@ angular.module('starter')
                 // これかかないと$scope.$applyでエラー
                 $timeout(function () {
                     $scope.$apply(questionInit);//次のクイズ用意
-  
+
                 });
-           
+
             }
 
             //  }

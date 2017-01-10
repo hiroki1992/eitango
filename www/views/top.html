@@ -6,11 +6,11 @@
 <div class="list">
  <label class="item item-input item-select item-stable">
    <div class="input-label">
-     カテゴリー選択
+     レベル選択
    </div>
 
-    <select ng-model="category_id"
-           ng-options="categories as categories.category_name  for categories in categories"  value="{{categories.category_id}}">
+    <select ng-model="level_id"
+           ng-options="categories as categories.level_name  for categories in categories"  value="{{categories.level_id}}">
 
  <option value="">選択してください</option>
 
@@ -24,7 +24,7 @@
 <br>
 <br>
 <div class="start-btn" align="center">
-  <button  ng-click="gameStart(category_id)" class="button button-positive button-large">
+  <button  ng-click="gameStart(level_id)" class="button button-positive button-large">
           Game Start
         </button>
 

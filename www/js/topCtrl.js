@@ -2,16 +2,16 @@ angular.module('starter')
 
     .controller('topCtrl', function ($scope, $location, questionsService, $rootScope) {
 
-        $scope.gameStart = function (category_id) {
-            if (category_id == null) {
-                alert("カテゴリーを選択してください。");
+        $scope.gameStart = function (level_id) {
+            if (level_id == null) {
+                alert("レベルを選択してください。");
                 return false;
             }
 
 
-            $rootScope.category_id = category_id.category_id;
-             $rootScope.category_name = category_id.category_name;
-            
+            $rootScope.level_id = level_id.level_id;
+            $rootScope.level_name = level_id.level_name;
+            $rootScope.sub_str = level_id.sub_str;
             $location.path("/game");
         }
 
